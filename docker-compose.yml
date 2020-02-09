@@ -36,11 +36,11 @@ services:
     container_name: postgres_container
     image: postgres:11.6
     environment: 
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
-      PGDATA: /var/lib/postgresql/data
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes: 
-      - postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data/pgdata
     ports: 
       - "5432:5432"
     networks: 
