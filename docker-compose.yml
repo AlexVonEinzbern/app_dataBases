@@ -40,6 +40,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
       PGDATA: /var/lib/postgresql/data/pgdata
+    volumes: 
+      - db-data/var/lib/postgresql/data
     ports: 
       - "1234:5432"
     networks: 
@@ -50,3 +52,7 @@ networks:
     driver: bridge
   postgres:
     driver: bridge
+
+volumes: 
+  db-data:
+    driver: local
